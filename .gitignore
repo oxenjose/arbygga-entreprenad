@@ -1,0 +1,25 @@
+# Entornos virtuales
+venv/
+env/
+.venv/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Variables de entorno y secretos
+.env
+.env.*
+
+# Archivos de sistema y editores
+.DS_Store
+.vscode/
+.idea/
+
+# Archivos ejecutables locales (como el túnel de Cloudflare)
+*.exe
+
+# Base de datos local (si la usas más adelante)
+*.db
+*.sqlite3

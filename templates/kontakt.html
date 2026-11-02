@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="contact-section">
+    <div class="container contact-container">
+        
+        <!-- Vänster sida: Info -->
+        <div class="contact-info">
+            <span class="subtitle">— KONTAKT</span>
+            <h2>Låt oss prata<br>om ditt projekt</h2>
+            <p>Fyll i formuläret så hör vi av oss inom 24 timmar. Vi hjälper dig med allt från en enkel fråga till en komplett offert.</p>
+            
+            <div class="info-item">
+                <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                <div>
+                    <span class="info-label">TELEFON</span>
+                    <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 500;">070-000 00 00</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                <div>
+                    <span class="info-label">E-POST</span>
+                    <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 500;">info@arbygga.se</p>
+                </div>
+            </div>
+            
+            <div class="info-item" style="border-bottom: none;">
+                <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                    <span class="info-label">ADRESS</span>
+                    <p style="margin-bottom: 0; color: var(--text-dark); font-weight: 500;">Stockholm, Sverige</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Höger sida: Formulär -->
+        <div class="contact-form">
+            <form action="{{ url_for('kontakt') }}" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fornamn">FÖRNAMN</label>
+                        <input type="text" id="fornamn" name="fornamn" placeholder="Anna" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="efternamn">EFTERNAMN</label>
+                        <input type="text" id="efternamn" name="efternamn" placeholder="Lindqvist" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telefon">TELEFON</label>
+                        <input type="tel" id="telefon" name="telefon" placeholder="070-000 00 00">
+                    </div>
+                    <div class="form-group">
+                        <label for="epost">E-POST</label>
+                        <input type="email" id="epost" name="epost" placeholder="anna@exempel.se" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="projekt">TYP AV PROJEKT</label>
+                    <select id="projekt" name="projekt">
+                        <option value="">Välj tjänst...</option>
+                        <option value="maleri">Måleri</option>
+                        <option value="golv">Golv</option>
+                        <option value="snickeri">Snickeri</option>
+                        <option value="annat">Annat</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="beskrivning">BESKRIV DITT PROJEKT</label>
+                    <textarea id="beskrivning" name="beskrivning" rows="4" placeholder="Berätta lite om vad du planerar att bygga eller renovera..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Skicka förfrågan</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

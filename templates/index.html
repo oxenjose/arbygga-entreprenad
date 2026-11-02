@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- HERO SECTION -->
+<section class="hero-new">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content-new">
+        <span class="hero-company-name animate-on-scroll">ARBYGGA ENTREPRENAD AB</span>
+        <h1 class="animate-on-scroll delay-1">En trygg <span class="text-blue-gradient">byggpartner</span><br>inom Stockholm</h1>
+        <p class="hero-desc animate-on-scroll delay-2">Välkommen till Arbygga Entreprenad. Vi erbjuder allt inom bygg från golv till tak, nyproduktion till mindre renoveringar och bemanning. Vi samordnar hela projektet så att du har en ansvarig partner genom hela processen.</p>
+        
+        <div class="hero-buttons animate-on-scroll delay-3">
+            <a href="#kontakt" class="btn-hero-primary">Få gratis offert</a>
+            <a href="tel:+46764000008" class="btn-hero-outline"><i class="fas fa-phone-alt"></i> +46 76 400 00 08</a>
+        </div>
+    </div>
+</section>
+
+<!-- OM OSS SECTION -->
+<section class="about-section">
+    <div class="container split-layout">
+        <div class="text-content animate-on-scroll">
+            <h2>Vi är Arbygga Entreprenad</h2>
+            <p><strong>Vi är ett byggföretag från Stockholm som grundades med en vision om att leverera kvalitet och trygghet.</strong> Vår personal har många års erfarenhet av byggbranschen. Våra kunder är främst företag, bostadsföreningar och samfälligheter.</p>
+            <p>Vi erbjuder allt inom bygg från golv till tak, nyproduktion till mindre renoveringar och bemanning. Vår personal har de utbildningar som branschen kräver, såsom tex BAS P / BAS U, Allmän ställning, Mobila arbetsplattformar, Fallskydd och Heta Arbeten. Vi är även tecknat kollektivavtal som vi följer!</p>
+        </div>
+        <div class="image-content animate-on-scroll delay-1">
+            <img src="{{ url_for('static', filename='images/tak.png') }}" alt="Takarbete">
+        </div>
+    </div>
+</section>
+
+<!-- TJÄNSTER SECTION -->
+<section id="tjanster" class="services-section">
+    <div class="container service-grid">
+        <!-- Kort 1: Måleri -->
+        <div class="service-card tilt-card animate-on-scroll">
+            <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
+            <h3>MÅLERI</h3>
+            <p>Vi målar om lägenheter, villor och radhus i hela Stockholm – väggar, tak, snickerier, fasader och fönster. Noggrannhet, fast pris och ROT-avdrag direkt på fakturan.</p>
+            <!-- Länk till rätt sida -->
+            <a href="{{ url_for('maleri') }}" class="btn-outline">LÄS MER OM MÅLERI</a>
+        </div>
+        
+        <!-- Kort 2: Golv -->
+        <div class="service-card highlight tilt-card animate-on-scroll delay-1">
+            <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+            <h3>GOLV</h3>
+            <p>Vi utför golvslipning och golvläggning av alla typer av trägolv för både privatpersoner och företag. Vi har maskinerna, kunskapen och erfarenheten som behövs för det bästa resultatet.</p>
+            <!-- Länk till rätt sida -->
+            <a href="{{ url_for('golv') }}" class="btn-solid">LÄS MER OM GOLV</a>
+        </div>
+        
+        <!-- Kort 3: Snickeri -->
+        <div class="service-card tilt-card animate-on-scroll delay-2">
+            <div class="service-icon"><i class="fas fa-hammer"></i></div>
+            <h3>SNICKERI</h3>
+            <p>Vi hjälper dig i hemmet med enklare snickeriarbeten såsom altanbygge, platsbyggda hyllor och garderober samt enklare renoveringar. Vi gör även kök, badrum och liknande.</p>
+            <!-- Länk till rätt sida -->
+            <a href="{{ url_for('snickeri') }}" class="btn-outline">LÄS MER OM SNICKERI</a>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESO SECTION -->
+<section class="process-section">
+    <div class="container">
+        <h2 class="animate-on-scroll">Så här går ett projekt till hos vår <span class="text-blue-gradient">byggfirma</span></h2>
+        
+        <div class="process-list">
+            <!-- (Samma process-steg som tidigare, oförändrat) -->
+            <div class="process-step animate-on-scroll">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>Förfrågan</h4>
+                    <p>Ni kontaktar Arbygga Entreprenad per telefon eller via formuläret på webbplatsen och berättar om projektet.</p>
+                </div>
+            </div>
+            <div class="process-step animate-on-scroll delay-1">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>Svar inom 24 timmar</h4>
+                    <p>Vi återkommer med en kostnadsfri bedömning inom 24 timmar och bokar in ett hembesök vid behov.</p>
+                </div>
+            </div>
+            <div class="process-step animate-on-scroll delay-2">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>Kostnadsfritt hembesök</h4>
+                    <p>Förutsättningarna går igenom på plats: skick, önskemål och omfattning. Tar cirka 30 till 45 minuter.</p>
+                </div>
+            </div>
+            <div class="process-step animate-on-scroll">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>Fast pris och avtal</h4>
+                    <p>Ni får en detaljerad offert med fast pris. Varje moment specificeras separat, och avtalet skrivs under innan arbetet börjar.</p>
+                </div>
+            </div>
+            <div class="process-step animate-on-scroll delay-1">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h4>Genomförande under ett tak</h4>
+                    <p>Projektet genomförs med en kontaktperson genom hela processen, oavsett hur många yrkesgrupper som är inblandade.</p>
+                </div>
+            </div>
+            <div class="process-step animate-on-scroll delay-2">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h4>Slutbesiktning</h4>
+                    <p>Arbetet gås igenom inom en vecka efter avslutat projekt. Ni får slutdokumentation och garanti enligt gällande konsumenttjänstlag.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KONTAKT SECTION -->
+<section id="kontakt" class="contact-section-dark">
+    <!-- (Samma kontaktformulär som tidigare, oförändrat) -->
+    <div class="container contact-container-dark">
+        <div class="contact-info-dark animate-on-scroll">
+            <span class="subtitle-dark">— KONTAKT</span>
+            <h2>Låt oss prata<br>om ditt projekt</h2>
+            <p>Fyll i formuläret så hör vi av oss inom 24 timmar. Vi hjälper dig med allt från en enkel fråga till en komplett offert.</p>
+            <div class="info-item-dark">
+                <div class="icon-box-dark"><i class="fas fa-phone-alt"></i></div>
+                <div>
+                    <span class="info-label-dark">TELEFON</span>
+                    <p class="info-value-dark">076-400 00 08</p>
+                </div>
+            </div>
+            <div class="info-item-dark">
+                <div class="icon-box-dark"><i class="fas fa-envelope"></i></div>
+                <div>
+                    <span class="info-label-dark">E-POST</span>
+                    <p class="info-value-dark">info@arbygga.se</p>
+                </div>
+            </div>
+            <div class="info-item-dark" style="border-bottom: none;">
+                <div class="icon-box-dark"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                    <span class="info-label-dark">ADRESS</span>
+                    <p class="info-value-dark">Stockholm, Sverige</p>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form-dark animate-on-scroll delay-1">
+            <form action="#kontakt" method="POST">
+                <div class="form-row-dark">
+                    <div class="form-group-dark">
+                        <label for="fornamn">FÖRNAMN</label>
+                        <input type="text" id="fornamn" name="fornamn" placeholder="Anna" required>
+                    </div>
+                    <div class="form-group-dark">
+                        <label for="efternamn">EFTERNAMN</label>
+                        <input type="text" id="efternamn" name="efternamn" placeholder="Lindqvist" required>
+                    </div>
+                </div>
+                <div class="form-row-dark">
+                    <div class="form-group-dark">
+                        <label for="telefon">TELEFON</label>
+                        <input type="tel" id="telefon" name="telefon" placeholder="070-000 00 00">
+                    </div>
+                    <div class="form-group-dark">
+                        <label for="epost">E-POST</label>
+                        <input type="email" id="epost" name="epost" placeholder="anna@exempel.se" required>
+                    </div>
+                </div>
+                <div class="form-group-dark">
+                    <label for="projekt">TYP AV PROJEKT</label>
+                    <select id="projekt" name="projekt">
+                        <option value="">Välj tjänst...</option>
+                        <option value="maleri">Måleri</option>
+                        <option value="golv">Golv</option>
+                        <option value="snickeri">Snickeri</option>
+                        <option value="annat">Annat</option>
+                    </select>
+                </div>
+                <div class="form-group-dark">
+                    <label for="beskrivning">BESKRIV DITT PROJEKT</label>
+                    <textarea id="beskrivning" name="beskrivning" rows="5" placeholder="Berätta lite om vad du planerar att bygga eller renovera..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit-dark">Skicka förfrågan</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
