@@ -1,11 +1,11 @@
+<img width="1853" height="4667" alt="Opera Snapshot_2026-11-02_224514_127 0 0 1" src="https://github.com/user-attachments/assets/dfd95131-fa38-49b0-9d9c-9cf3280d84d1" />
 # Arbygga Entreprenad - Webbplats
 
 En modern, responsiv och interaktiv webbplats för byggfirman **Arbygga Entreprenad** i Stockholm. Webbplatsen är byggd med Python och Flask, och fokuserar på att skapa ett professionellt förtroende samt underlätta för kunder att begära en offert.
 
 ## 📸 Skärmbilder (Screenshots)
 
-*(Här kan du lägga till dina bilder senare. Spara dem i en mapp som heter `screenshots` och skriv t.ex.:)*
-![Startsida Arbygga Entreprenad](screenshots/hero.png)
+<img width="1853" height="4667" alt="Opera Snapshot_2026-11-02_224514_127 0 0 1" src="https://github.com/user-attachments/assets/e9415f91-2462-4e5d-a8a6-a86943709387" />
 
 ## ✨ Funktioner (Features)
 
