@@ -37,7 +37,14 @@
             <a href="{{ url_for('index') }}" class="logo">
                 <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Arbygga Entreprenad">
             </a>
-            <ul class="nav-links">
+            
+            <!-- HAMBURGERMENY (Visas bara på mobil) -->
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- LÄNKAR -->
+            <ul class="nav-links" id="nav-links">
                 <li><a href="{{ url_for('index') }}">Hem</a></li>
                 <li><a href="{{ url_for('index') }}#tjanster">Våra tjänster</a></li>
                 <li><a href="{{ url_for('aktuellt') }}">Aktuellt</a></li>
@@ -55,7 +62,6 @@
         <div class="container footer-grid">
             <div class="footer-col brand-col">
                 <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Arbygga Entreprenad" class="footer-logo">
-                <!-- CORREGIDO: Quitado el AB aquí -->
                 <h3>ARBYGGA ENTREPRENAD</h3>
                 <p>Bygg & renovering i Stockholm</p>
                 <p class="small-text">Org.nr 830301-XXXX-00001 · Godkänd för F-skatt</p>

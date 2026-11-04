@@ -1,5 +1,6 @@
-
-/* --- VARIABLES --- */
+/* ==========================================================================
+   01. VARIABLER & RESET
+   ========================================================================== */
 :root {
     --primary-color: #1a365d; 
     --secondary-color: #2c5282; 
@@ -14,7 +15,11 @@
     --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -27,17 +32,37 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-color); }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
+h1, h2, h3, h4 { 
+    font-family: 'Playfair Display', serif; 
+    color: var(--primary-color); 
+}
 
-/* --- ANIMACIONES --- */
-.animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-.animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+    width: 100%; 
+}
+
+/* ==========================================================================
+   02. ANIMATIONER (Scroll & Effekter)
+   ========================================================================== */
+.animate-on-scroll { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+.animate-on-scroll.is-visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
 .delay-1 { transition-delay: 0.2s; }
 .delay-2 { transition-delay: 0.4s; }
 .delay-3 { transition-delay: 0.6s; }
 
-/* --- TOP BAR --- */
+/* ==========================================================================
+   03. TOP BAR (Översta raden med telefon)
+   ========================================================================== */
 .topbar { 
     background-color: var(--bg-dark); 
     color: #fff; 
@@ -45,7 +70,11 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
     font-size: 0.95rem; 
     border-bottom: 1px solid rgba(255,255,255,0.1); 
 }
-.topbar-content { display: flex; justify-content: space-between; align-items: center; }
+.topbar-content { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
 
 .call-link { 
     color: #fff; 
@@ -80,7 +109,9 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
 .topbar-right a { color: #fff; text-decoration: none; font-size: 1.1rem; transition: var(--transition); }
 .topbar-right a:hover { color: var(--accent-blue); }
 
-/* --- NAVBAR --- */
+/* ==========================================================================
+   04. NAVBAR & MOBILMENY
+   ========================================================================== */
 .navbar {
     background-color: #fff;
     position: sticky;
@@ -98,10 +129,10 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
     max-width: 1200px; 
     margin: 0 auto; 
     padding: 0 20px; 
-    height: 80px; /* Håller navbaren smal */
+    height: 80px; 
+    position: relative;
 }
 
-/* Logotypen i Navbar (Stor men tar inte upp höjd) */
 .logo {
     display: flex;
     align-items: center;
@@ -109,19 +140,28 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
 }
 
 .logo img {
-    height: 130px; /* Stor logga */
+    height: 130px; 
     width: auto;
     display: block;
     transition: var(--transition);
-    margin: -25px 0; /* Negativ marginal för att inte göra navbaren hög */
+    margin: -25px 0; 
 }
 .logo img:hover { transform: scale(1.05); }
+
+/* Hamburgermeny knapp (göms på desktop) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
 
 .nav-links { list-style: none; display: flex; align-items: center; gap: 30px; }
 .nav-links a { color: var(--text-dark); text-decoration: none; font-weight: 500; font-size: 14px; transition: var(--transition); }
 .nav-links a:hover { color: var(--accent-blue); }
 
-/* Botón Navbar Azul */
 .btn-nav {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     color: #fff !important;
@@ -133,7 +173,9 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
 }
 .btn-nav:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(44, 82, 130, 0.5); }
 
-/* --- HERO SECTION --- */
+/* ==========================================================================
+   05. HERO SECTION (Startsidans topp)
+   ========================================================================== */
 .hero-new {
     min-height: 80vh; 
     background-image: url('images/hero-bg.png'); 
@@ -144,28 +186,78 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
     align-items: center;
     padding: 100px 0;
 }
-.hero-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to right, rgba(10, 17, 40, 0.9) 0%, rgba(10, 17, 40, 0.4) 100%); }
+.hero-overlay { 
+    position: absolute; 
+    top: 0; left: 0; right: 0; bottom: 0; 
+    background: linear-gradient(to right, rgba(10, 17, 40, 0.9) 0%, rgba(10, 17, 40, 0.4) 100%); 
+}
 .hero-content-new { position: relative; z-index: 10; }
-.hero-company-name { color: var(--accent-blue); font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 15px; }
-.hero-content-new h1 { color: var(--text-light); font-family: 'Roboto', sans-serif; font-size: 4.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 25px; max-width: 900px; }
-.text-blue-gradient { background: linear-gradient(90deg, #63b3ed, #3182ce); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.hero-desc { color: #e2e8f0; font-size: 1.25rem; max-width: 650px; margin-bottom: 40px; line-height: 1.6; }
+.hero-company-name { 
+    color: var(--accent-blue); 
+    font-size: 1.1rem; 
+    font-weight: 700; 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+    display: block; 
+    margin-bottom: 15px; 
+}
+.hero-content-new h1 { 
+    color: var(--text-light); 
+    font-family: 'Roboto', sans-serif; 
+    font-size: 4.5rem; 
+    font-weight: 900; 
+    line-height: 1.1; 
+    margin-bottom: 25px; 
+    max-width: 900px; 
+}
+.text-blue-gradient { 
+    background: linear-gradient(90deg, #63b3ed, #3182ce); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+.hero-desc { 
+    color: #e2e8f0; 
+    font-size: 1.25rem; 
+    max-width: 650px; 
+    margin-bottom: 40px; 
+    line-height: 1.6; 
+}
 
 .hero-buttons { display: flex; gap: 20px; align-items: center; }
 .btn-hero-primary {
-    display: inline-block; background: linear-gradient(135deg, var(--accent-blue), var(--secondary-color));
-    color: #fff; padding: 16px 35px; font-size: 1.1rem; font-weight: 700; text-decoration: none;
-    border-radius: 4px; border: 2px solid transparent; transition: var(--transition); box-shadow: 0 4px 15px rgba(49, 130, 206, 0.4);
+    display: inline-block; 
+    background: linear-gradient(135deg, var(--accent-blue), var(--secondary-color));
+    color: #fff; 
+    padding: 16px 35px; 
+    font-size: 1.1rem; 
+    font-weight: 700; 
+    text-decoration: none;
+    border-radius: 4px; 
+    border: 2px solid transparent; 
+    transition: var(--transition); 
+    box-shadow: 0 4px 15px rgba(49, 130, 206, 0.4);
 }
 .btn-hero-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(49, 130, 206, 0.6); }
 .btn-hero-outline {
-    display: inline-block; background-color: transparent; color: #fff; padding: 16px 35px;
-    font-size: 1.1rem; font-weight: 700; text-decoration: none; border-radius: 4px; border: 2px solid #fff;
-    transition: var(--transition); display: flex; align-items: center; gap: 10px;
+    display: inline-block; 
+    background-color: transparent; 
+    color: #fff; 
+    padding: 16px 35px;
+    font-size: 1.1rem; 
+    font-weight: 700; 
+    text-decoration: none; 
+    border-radius: 4px; 
+    border: 2px solid #fff;
+    transition: var(--transition); 
+    display: flex; 
+    align-items: center; 
+    gap: 10px;
 }
 .btn-hero-outline:hover { background-color: #fff; color: var(--primary-color); transform: translateY(-3px); }
 
-/* --- OM OSS --- */
+/* ==========================================================================
+   06. OM OSS SECTION
+   ========================================================================== */
 .about-section { padding: 100px 0; }
 .split-layout { display: flex; gap: 60px; align-items: stretch; }
 .text-content { flex: 1.2; display: flex; flex-direction: column; justify-content: center; }
@@ -183,7 +275,9 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
     display: block; 
 }
 
-/* --- TJÄNSTER --- */
+/* ==========================================================================
+   07. TJÄNSTER SECTION (Korten)
+   ========================================================================== */
 .services-section { padding: 100px 0; background-color: var(--bg-light); }
 .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; perspective: 1000px; }
 .service-card {
@@ -215,7 +309,9 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
 .btn-solid { background: #fff; color: var(--primary-color); border: 1px solid #fff; }
 .btn-solid:hover { background: var(--accent-blue); color: #fff; border-color: var(--accent-blue); }
 
-/* --- PROCESO --- */
+/* ==========================================================================
+   08. PROCESS SECTION (Steg för steg)
+   ========================================================================== */
 .process-section { padding: 100px 0; background-color: #fff; }
 .process-section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
 .process-list { display: flex; flex-direction: column; gap: 20px; max-width: 850px; margin: 0 auto; }
@@ -228,7 +324,9 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
 .step-content h4 { font-size: 1.2rem; margin-bottom: 5px; font-family: 'Roboto', sans-serif; color: var(--primary-color); }
 .step-content p { font-size: 0.95rem; color: var(--text-muted); }
 
-/* --- KONTAKT SECTION --- */
+/* ==========================================================================
+   09. KONTAKT SECTION (Mörka formuläret)
+   ========================================================================== */
 .contact-section-dark { background-color: var(--bg-dark); padding: 100px 0; color: #fff; }
 .contact-container-dark { display: flex; gap: 60px; }
 .contact-info-dark { flex: 1; }
@@ -255,19 +353,19 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
 }
 .btn-submit-dark:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(49, 130, 206, 0.5); }
 
-/* --- FOOTER --- */
+/* ==========================================================================
+   10. FOOTER
+   ========================================================================== */
 .site-footer { background-color: #050914; color: #a0aec0; padding: 60px 0 0 0; font-size: 0.9rem; margin-top: auto; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 40px; }
 
-/* Fixad footer-logotyp: Mindre storlek, vit bakgrund */
-/* Fixad footer-logotyp: Större storlek med vit bakgrund */
 .footer-logo { 
-    height: 110px; /* Ökad från 60px till 110px */
+    height: 110px; 
     width: auto; 
     margin-bottom: 20px; 
-    background-color: #ffffff; /* Vit bakgrund */
-    padding: 12px 18px; /* Mer luft runt om */
-    border-radius: 8px; /* Mjuka hörn */
+    background-color: #ffffff; 
+    padding: 12px 18px; 
+    border-radius: 8px; 
     display: block;
 }
 
@@ -285,38 +383,9 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
 .footer-col ul a:hover { color: #fff; text-decoration: underline; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; text-align: left; font-size: 0.8rem; color: #718096; }
 
-/* --- RESPONSIVIDAD --- */
-@media (max-width: 992px) {
-    .hero-content-new h1 { font-size: 3.5rem; }
-    .split-layout, .contact-container-dark { flex-direction: column; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 768px) {
-    .nav-links { display: none; }
-    
-    /* Navbar logo på mobil */
-    .nav-container { height: 70px; } 
-    .logo img { height: 90px; margin: -10px 0; } 
-    
-    /* Footer logo på mobil */
-    .footer-logo { height: 50px; padding: 4px 8px; }
-    
-    .hero-content-new h1 { font-size: 2.8rem; }
-    .hero-desc { font-size: 1rem; }
-    .hero-buttons { flex-direction: column; align-items: flex-start; width: 100%; }
-    .btn-hero-primary, .btn-hero-outline { width: 100%; justify-content: center; }
-    .contact-info-dark h2 { font-size: 2.5rem; }
-    .footer-grid { grid-template-columns: 1fr; }
-    .form-row-dark { flex-direction: column; gap: 0; }
-    .process-step { flex-direction: column; text-align: center; padding: 20px; }
-    .image-content img { max-height: 350px; }
-    
-    .call-link { font-size: 0.8rem; padding: 6px 12px; }
-    .topbar-right { display: none; } 
-}
-
-/* --- UNDERSIDOR FÖR TJÄNSTER --- */
+/* ==========================================================================
+   11. UNDERSIDOR FÖR TJÄNSTER (Måleri, Golv, Snickeri)
+   ========================================================================== */
 .service-page-hero {
     min-height: 40vh;
     background: linear-gradient(135deg, var(--primary-color), var(--bg-dark));
@@ -366,7 +435,57 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
     border-radius: 50%;
 }
 
+/* ==========================================================================
+   12. RESPONSIVITET (Mobil & Surfplatta)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .hero-content-new h1 { font-size: 3.5rem; }
+    .split-layout, .contact-container-dark { flex-direction: column; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
 @media (max-width: 768px) {
+    /* Topbar */
+    .call-link { font-size: 0.8rem; padding: 6px 12px; }
+    .topbar-right { display: none; }
+
+    /* Mobilmeny */
+    .hamburger { display: block; }
+    .nav-container { height: 70px; } 
+    .logo img { height: 90px; margin: -10px 0; } 
+    
+    .nav-links {
+        display: none; /* Göms som standard */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        gap: 15px;
+        z-index: 999;
+    }
+    .nav-links.active {
+        display: flex; /* Visas när man klickar på hamburgaren */
+    }
+
+    /* Hero */
+    .hero-content-new h1 { font-size: 2.8rem; }
+    .hero-desc { font-size: 1rem; }
+    .hero-buttons { flex-direction: column; align-items: flex-start; width: 100%; }
+    .btn-hero-primary, .btn-hero-outline { width: 100%; justify-content: center; }
+
+    /* Sektioner */
+    .contact-info-dark h2 { font-size: 2.5rem; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-logo { height: 80px; padding: 8px 12px; }
+    .form-row-dark { flex-direction: column; gap: 0; }
+    .process-step { flex-direction: column; text-align: center; padding: 20px; }
+    .image-content img { max-height: 350px; }
+
+    /* Undersidor */
     .service-page-hero h1 { font-size: 2.5rem; }
     .service-page-hero { min-height: 30vh; }
 }
