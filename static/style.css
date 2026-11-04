@@ -1,3 +1,4 @@
+
 /* --- VARIABLES --- */
 :root {
     --primary-color: #1a365d; 
@@ -36,27 +37,26 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
 .delay-2 { transition-delay: 0.4s; }
 .delay-3 { transition-delay: 0.6s; }
 
-/* --- TOP BAR (Högre och mer inbjudande) --- */
+/* --- TOP BAR --- */
 .topbar { 
     background-color: var(--bg-dark); 
     color: #fff; 
-    padding: 15px 0; /* Ökat padding för att göra den högre */
+    padding: 15px 0; 
     font-size: 0.95rem; 
     border-bottom: 1px solid rgba(255,255,255,0.1); 
 }
 .topbar-content { display: flex; justify-content: space-between; align-items: center; }
 
-/* Telefonlänken i toppbaren */
 .call-link { 
     color: #fff; 
     text-decoration: none; 
     display: flex; 
     align-items: center; 
     gap: 10px; 
-    font-weight: 700; /* Fetare text */
-    background: rgba(255, 255, 255, 0.1); /* Snygg bakgrund på knappen */
+    font-weight: 700; 
+    background: rgba(255, 255, 255, 0.1); 
     padding: 8px 20px;
-    border-radius: 50px; /* Rundade kanter */
+    border-radius: 50px; 
     transition: var(--transition); 
 }
 .call-link:hover { 
@@ -64,7 +64,6 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
     transform: scale(1.05);
 }
 
-/* Pulserande animation på telefonikonen */
 .call-link i {
     color: #63b3ed;
     font-size: 1.1rem;
@@ -88,9 +87,10 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
     top: 0;
     width: 100%;
     z-index: 1000;
-    padding: 10px 0; /* Normal padding */
+    padding: 0; 
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
+
 .nav-container { 
     display: flex; 
     justify-content: space-between; 
@@ -98,15 +98,22 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
     max-width: 1200px; 
     margin: 0 auto; 
     padding: 0 20px; 
-    min-height: 90px; /* Säkerställer en bra höjd */
+    height: 80px; /* Håller navbaren smal */
 }
 
-/* LOGOTYP (Stor men utan att förstöra layouten) */
+/* Logotypen i Navbar (Stor men tar inte upp höjd) */
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
 .logo img {
-    height: 90px; /* Perfekt storlek */
+    height: 130px; /* Stor logga */
     width: auto;
     display: block;
     transition: var(--transition);
+    margin: -25px 0; /* Negativ marginal för att inte göra navbaren hög */
 }
 .logo img:hover { transform: scale(1.05); }
 
@@ -251,7 +258,19 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
 /* --- FOOTER --- */
 .site-footer { background-color: #050914; color: #a0aec0; padding: 60px 0 0 0; font-size: 0.9rem; margin-top: auto; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 40px; }
-.footer-logo { height: 100px; width: auto; margin-bottom: 20px; }
+
+/* Fixad footer-logotyp: Mindre storlek, vit bakgrund */
+/* Fixad footer-logotyp: Större storlek med vit bakgrund */
+.footer-logo { 
+    height: 110px; /* Ökad från 60px till 110px */
+    width: auto; 
+    margin-bottom: 20px; 
+    background-color: #ffffff; /* Vit bakgrund */
+    padding: 12px 18px; /* Mer luft runt om */
+    border-radius: 8px; /* Mjuka hörn */
+    display: block;
+}
+
 .brand-col h3 { color: #fff; font-family: 'Roboto', sans-serif; font-size: 1.1rem; margin-bottom: 10px; letter-spacing: 1px; }
 .brand-col p { margin-bottom: 8px; }
 .small-text { font-size: 0.8rem; color: #718096; margin-bottom: 20px !important; }
@@ -275,8 +294,14 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
 
 @media (max-width: 768px) {
     .nav-links { display: none; }
-    .logo img { height: 70px; } 
-    .footer-logo { height: 80px; }
+    
+    /* Navbar logo på mobil */
+    .nav-container { height: 70px; } 
+    .logo img { height: 90px; margin: -10px 0; } 
+    
+    /* Footer logo på mobil */
+    .footer-logo { height: 50px; padding: 4px 8px; }
+    
     .hero-content-new h1 { font-size: 2.8rem; }
     .hero-desc { font-size: 1rem; }
     .hero-buttons { flex-direction: column; align-items: flex-start; width: 100%; }
@@ -287,13 +312,13 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
     .process-step { flex-direction: column; text-align: center; padding: 20px; }
     .image-content img { max-height: 350px; }
     
-    /* Anpassa toppbaren för mobil */
     .call-link { font-size: 0.8rem; padding: 6px 12px; }
-    .topbar-right { display: none; } /* Gömmer sociala ikoner på mobil för att spara plats */
+    .topbar-right { display: none; } 
 }
-/* --- UNDERSIDOR FÖR TJÄNSTER (Måleri, Golv, Snickeri) --- */
+
+/* --- UNDERSIDOR FÖR TJÄNSTER --- */
 .service-page-hero {
-    min-height: 40vh; /* Lägre hero för undersidorna */
+    min-height: 40vh;
     background: linear-gradient(135deg, var(--primary-color), var(--bg-dark));
     position: relative;
     display: flex;
@@ -319,7 +344,6 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-co
     background-color: #fff;
 }
 
-/* Lista med fördelar/checkmarkeringar */
 .service-list {
     list-style: none;
     margin: 25px 0;
