@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arbygga Entreprenad AB | Byggfirma i Stockholm</title>
     
-    <!-- Din CSS-fil (se till att den ligger i /static/style.css) -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Din CSS-fil -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2">
     
-    <!-- Uppdaterade Google Fonts för den nya Hallmark-designen -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome (för ikoner) -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -40,7 +40,7 @@
                 <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Arbygga Entreprenad">
             </a>
             
-            <!-- HAMBURGERMENY (Visas bara på mobil) -->
+            <!-- HAMBURGERMENY -->
             <button class="hamburger" id="hamburger" aria-label="Meny">
                 <i class="fas fa-bars"></i>
             </button>
@@ -55,7 +55,7 @@
         </div>
     </nav>
 
-    <!-- CONTENIDO DE CADA PÁGINA (Här hamnar index.html) -->
+    <!-- CONTENIDO DE CADA PÁGINA -->
     {% block content %}
     {% endblock %}
 
@@ -113,21 +113,8 @@
         </div>
     </footer>
 
-    <!-- Skript för att få mobilmenyn (hamburgaren) att fungera -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('nav-links');
-            
-            if (hamburger && navLinks) {
-                hamburger.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
-                });
-            }
-        });
-    </script>
-    
-    <!-- Din egna script-fil om du har en -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- DITT EXTERNA SCRIPT (Den enda som hanterar menyn nu) -->
+    <!-- ?v=2 tvingar webbläsaren att ladda den senaste versionen av filen -->
+    <script src="{{ url_for('static', filename='js/script.js') }}?v=2"></script>
 </body>
 </html>
