@@ -1,3 +1,4 @@
+alert("JavaScriptet laddas in!");
 document.addEventListener("DOMContentLoaded", function() {
     
     // ==========================================================================
