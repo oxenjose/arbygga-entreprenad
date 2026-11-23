@@ -561,23 +561,21 @@ h3 {
 /* ==========================================================================
    09. RESPONSIVITET
    ========================================================================== */
-@media (max-width: 992px) {
-    .split-layout, .contact-container-dark { grid-template-columns: 1fr; gap: 2.5rem; }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .service-grid { grid-template-columns: 1fr; border: none; }
-    .service-card { border: 1px solid var(--silver-color); margin-bottom: 1rem; border-right: 1px solid var(--silver-color); }
-    .service-card.highlight { border-color: var(--accent-color); }
-    .image-content img { max-height: 350px; }
-}
-
 @media (max-width: 768px) {
     .call-link { font-size: 0.75rem; padding: 4px 10px; }
     .topbar-right { display: none; }
     
     .nav-container { height: 70px; } 
     .logo img { height: 55px; } 
-    .hamburger { display: block; }
     
+    /* UPPDATERAD: Hamburgerknappen */
+    .hamburger { 
+        display: block; 
+        position: relative;
+        z-index: 1001; /* Lägger knappen överst så den alltid går att klicka på */
+    }
+    
+    /* UPPDATERAD: Den utfällda menyn */
     .nav-links {
         display: none;
         position: absolute;
@@ -589,8 +587,13 @@ h3 {
         padding: 1.5rem;
         box-shadow: 0 10px 15px rgba(0,0,0,0.1);
         gap: 1.2rem;
+        z-index: 1000; /* Säkerställer att menyn hamnar över hero-bilden */
     }
-    .nav-links.active { display: flex; }
+    
+    /* UPPDATERAD: Tvingar fram menyn när den är aktiv */
+    .nav-links.active { 
+        display: flex !important; 
+    }
 
     .hero-new { min-height: 65vh; }
     .hero-buttons { flex-direction: column; align-items: stretch; }
