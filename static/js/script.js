@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     
     // ==========================================================================
-    // 1. HAMBURGERMENY FÖR MOBIL
+    // 1. HAMBURGER MENU FOR MOBILE
     // ==========================================================================
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         hamburger.addEventListener('click', function() {
             navLinks.classList.toggle('active');
             
-            // Byter ikon från hamburgare till kryss (X)
+            // Toggle icon between bars and times
             const icon = hamburger.querySelector('i');
             if (navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Stäng menyn automatiskt när man klickar på en länk (endast mobil)
+        // Close menu automatically when a link is clicked
         const navItems = navLinks.querySelectorAll('a');
         navItems.forEach(item => {
             item.addEventListener('click', () => {
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // ==========================================================================
-    // 2. STICKY NAVBAR EFFEKT (Lägger till skugga när man scrollar)
+    // 2. STICKY NAVBAR EFFECT
     // ==========================================================================
     const navbar = document.querySelector('.navbar');
     
@@ -49,19 +49,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // ==========================================================================
-    // 3. SCROLL-ANIMATIONER (Hallmark style - subtilt och rent)
+    // 3. SCROLL ANIMATIONS
     // ==========================================================================
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.15 // Triggar när 15% av elementet syns
+        threshold: 0.15
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                // Slutar observera när animationen har spelats upp
                 observer.unobserve(entry.target);
             }
         });
@@ -71,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
     animatedElements.forEach(el => observer.observe(el));
 
     // ==========================================================================
-    // 4. FORMULÄR-FEEDBACK (Visar att formuläret skickas)
+    // 4. FORM FEEDBACK
     // ==========================================================================
     const contactForm = document.querySelector('.contact-form-dark form');
     
