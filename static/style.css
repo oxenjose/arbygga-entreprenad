@@ -561,21 +561,45 @@ h3 {
 /* ==========================================================================
    09. RESPONSIVITET
    ========================================================================== */
+@media (max-width: 992px) {
+    /* Tvinga allt att stapla på surfplatta/mobil */
+    .split-layout, .contact-container-dark, .service-grid { 
+        grid-template-columns: 1fr !important; 
+        gap: 2rem; 
+    }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    
+    .service-grid { border: none; }
+    .service-card { 
+        border: 1px solid var(--silver-color); 
+        margin-bottom: 1rem; 
+        border-right: 1px solid var(--silver-color); 
+    }
+    .service-card.highlight { border-color: var(--accent-color); }
+    
+    /* Fixa bilderna så de blir stora och fina istället för små miniatyrer */
+    .image-content { height: auto !important; }
+    .image-content img { 
+        max-height: none !important; 
+        width: 100% !important; 
+        height: auto !important;
+    }
+}
+
 @media (max-width: 768px) {
+    /* Topbar & Navbar */
     .call-link { font-size: 0.75rem; padding: 4px 10px; }
     .topbar-right { display: none; }
     
     .nav-container { height: 70px; } 
     .logo img { height: 55px; } 
     
-    /* UPPDATERAD: Hamburgerknappen */
     .hamburger { 
         display: block; 
         position: relative;
-        z-index: 1001; /* Lägger knappen överst så den alltid går att klicka på */
+        z-index: 1001; 
     }
     
-    /* UPPDATERAD: Den utfällda menyn */
     .nav-links {
         display: none;
         position: absolute;
@@ -587,21 +611,35 @@ h3 {
         padding: 1.5rem;
         box-shadow: 0 10px 15px rgba(0,0,0,0.1);
         gap: 1.2rem;
-        z-index: 1000; /* Säkerställer att menyn hamnar över hero-bilden */
+        z-index: 1000; 
     }
-    
-    /* UPPDATERAD: Tvingar fram menyn när den är aktiv */
     .nav-links.active { 
         display: flex !important; 
     }
 
-    .hero-new { min-height: 65vh; }
-    .hero-buttons { flex-direction: column; align-items: stretch; }
+    /* Hero-sektion (Större marginaler och anpassad text) */
+    .hero-new { 
+        min-height: 75vh; 
+        padding: 4rem 0;
+    }
+    .hero-content-new h1 { 
+        font-size: 2.5rem; /* Förhindrar att texten flyter utanför skärmen */
+        word-wrap: break-word;
+    }
+    .hero-buttons { flex-direction: column; align-items: stretch; gap: 1rem; }
     .btn-hero-primary, .btn-hero-outline { width: 100%; justify-content: center; }
 
-    .about-section, .services-section, .process-section, .contact-section-dark { padding: 4rem 0; }
+    /* Sektioner & Marginaler (Ger mer luft på mobilen) */
+    .container { padding: 0 1.25rem; } /* Lite mindre sidopadding för att maximera utrymmet */
+    .about-section, .services-section, .process-section, .contact-section-dark { 
+        padding: 3rem 0; 
+    }
     
+    /* Kontaktformulär */
     .contact-info-dark h2 { font-size: 2rem; }
-    .footer-grid { grid-template-columns: 1fr; }
     .form-row-dark { flex-direction: column; gap: 0; }
+    
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-logo { height: 60px; }
 }
