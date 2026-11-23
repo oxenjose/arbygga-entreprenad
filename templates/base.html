@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbygga Entreprenad | Byggfirma i Stockholm</title>
+    <title>Arbygga Entreprenad AB | Byggfirma i Stockholm</title>
     
+    <!-- Din CSS-fil (se till att den ligger i /static/style.css) -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!-- Uppdaterade Google Fonts för den nya Hallmark-designen -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (för ikoner) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -39,7 +41,7 @@
             </a>
             
             <!-- HAMBURGERMENY (Visas bara på mobil) -->
-            <button class="hamburger" id="hamburger">
+            <button class="hamburger" id="hamburger" aria-label="Meny">
                 <i class="fas fa-bars"></i>
             </button>
 
@@ -53,7 +55,7 @@
         </div>
     </nav>
 
-    <!-- CONTENIDO DE CADA PÁGINA -->
+    <!-- CONTENIDO DE CADA PÁGINA (Här hamnar index.html) -->
     {% block content %}
     {% endblock %}
 
@@ -62,7 +64,7 @@
         <div class="container footer-grid">
             <div class="footer-col brand-col">
                 <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Arbygga Entreprenad" class="footer-logo">
-                <h3>ARBYGGA ENTREPRENAD</h3>
+                <h3>ARBYGGA ENTREPRENAD AB</h3>
                 <p>Bygg & renovering i Stockholm</p>
                 <p class="small-text">Org.nr 830301-XXXX-00001 · Godkänd för F-skatt</p>
                 
@@ -73,7 +75,7 @@
                 
                 <div class="opening-hours">
                     <p><i class="far fa-clock"></i> Måndag–fredag: 07:00–18:00</p>
-                    <p style="margin-left: 20px;">Lördag–söndag: Stängt</p>
+                    <p style="margin-left: 24px; color: var(--text-muted);">Lördag–söndag: Stängt</p>
                 </div>
                 
                 <div class="social-links">
@@ -111,6 +113,21 @@
         </div>
     </footer>
 
+    <!-- Skript för att få mobilmenyn (hamburgaren) att fungera -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+            
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+    
+    <!-- Din egna script-fil om du har en -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
