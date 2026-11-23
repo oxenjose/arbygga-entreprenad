@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arbygga Entreprenad AB | Byggfirma i Stockholm</title>
     
-    <!-- Din CSS-fil -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2">
+    <!-- Din CSS-fil (Tvingar ny laddning med ?v=100) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=100">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -113,8 +113,7 @@
         </div>
     </footer>
 
-    <!-- DITT EXTERNA SCRIPT (Den enda som hanterar menyn nu) -->
-    <!-- ?v=2 tvingar webbläsaren att ladda den senaste versionen av filen -->
-    <script src="{{ url_for('static', filename='js/script.js') }}?v=2"></script>
+    <!-- DITT EXTERNA SCRIPT (Tvingar ny laddning med ?v=100) -->
+    <script src="{{ url_for('static', filename='js/script.js') }}?v=100"></script>
 </body>
 </html>

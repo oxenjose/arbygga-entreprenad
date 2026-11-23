@@ -1,4 +1,3 @@
-alert("JavaScriptet laddas in!");
 document.addEventListener("DOMContentLoaded", function() {
     
     // ==========================================================================
@@ -80,8 +79,6 @@ document.addEventListener("DOMContentLoaded", function() {
         contactForm.addEventListener('submit', function(e) {
             const submitBtn = this.querySelector('.btn-submit-dark');
             
-            // Vi förhindrar inte default här eftersom Flask behöver ta emot datan,
-            // men vi ändrar knappens utseende för att visa att något händer.
             if (submitBtn) {
                 submitBtn.innerHTML = 'Skickar...';
                 submitBtn.style.opacity = '0.7';
